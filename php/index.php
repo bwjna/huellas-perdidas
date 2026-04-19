@@ -19,23 +19,23 @@ include '../modelo/conexion.php';
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Mapa</a>
+          <a class="nav-link" href="mapa.php">Mapa</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Publicaciones</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">¿Como ayudar?</a>
+          <a class="nav-link" href="como-ayudar.php">¿Como ayudar?</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sobre Nosotros</a>
+          <a class="nav-link" href="sobre-nosotros.php">Sobre Nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contacto</a>
+          <a class="nav-link" href="contacto.php">Contacto</a>
         </li>
       </ul>
         <div class="ms-5">
-        <button class="btn btn-outline-light">Iniciar sesión</button>
+        <a href="acciones/login.php" class="btn btn-outline-light">Iniciar Sesión</a>
         <button class="btn btn-naranja">Registrarse</button>
         </div>
     </div>
