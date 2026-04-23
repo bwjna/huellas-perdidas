@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS huellas_perdidas;
-USE huellas_perdidas;
+CREATE DATABASE IF NOT EXISTS HuellasPerdidas;
+USE HuellasPerdidas;
 
 CREATE TABLE usuario (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
@@ -53,17 +53,12 @@ CREATE TABLE avistamiento (
     id_avistamiento INT AUTO_INCREMENT PRIMARY KEY,
     descripcion TEXT,
     fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
+    direccion VARCHAR(150),
+    latitud DECIMAL(10,7),
+    longitud DECIMAL(10,7),
     id_usuario INT,
     id_publicacion INT,
     FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
     FOREIGN KEY (id_publicacion) REFERENCES publicacion(id_publicacion)
 ) ENGINE=InnoDB;
 
-CREATE TABLE ubicacion (
-    id_ubicacion INT AUTO_INCREMENT PRIMARY KEY,
-    direccion VARCHAR(150),
-    latitud DECIMAL(10,7),
-    longitud DECIMAL(10,7),
-    id_avistamiento INT UNIQUE,
-    FOREIGN KEY (id_avistamiento) REFERENCES avistamiento(id_avistamiento)
-) ENGINE=InnoDB;

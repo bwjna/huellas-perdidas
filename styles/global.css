@@ -1,0 +1,203 @@
+/* ===== NAVBAR ===== */
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    
+}
+
+.navbar{
+height: 90px;
+overflow: hidden;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 3px;
+    background-color: rgb(189, 126, 11);
+    transition: width 0.3s;
+}
+
+.btn-naranja{
+background-color: #ff7a00;
+color: white;
+border: none;
+}
+
+.btn-naranja:hover{
+background-color: #e66d00;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ===== Hero-primera impresion ===== */
+
+.fondo {
+    width: 100%;
+    height: 500px;
+    background-image: url("../styles/perrohd4k.jpeg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.fondo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.texto {
+    position: absolute;
+    top: 35%;    /* bajalo o subilo hasta que quede centrado visualmente */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+    width: 60%;
+}
+
+.logo{
+height: 140px;
+margin-top: 0px;
+position: relative;
+top: 5px;
+}
+
+.btn{
+right: 100px;
+position: relative;
+}
+
+.wave-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.wave-bottom svg {
+    display: block;
+    width: 100%;
+    height: 150px;
+}
+
+.acciones {
+    padding: 60px 0;
+}
+
+/* ===== Cards ===== */
+
+.card-accion {
+    text-align: center;
+    padding: 40px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    transition: transform 0.2s;
+}
+
+.card-accion:hover {
+    transform: translateY(-5px);
+}
+
+.card-icono {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.card-accion h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card-accion p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.btn-card {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 999px;
+    background: #EA580C;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.btn-card:hover {
+    background: #c2410c;
+    color: white;
+}
+
+.btn-card {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 999px;
+    background: #EA580C !important;
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 0.9rem;
+}
+
+.acciones .row {
+    align-items: stretch;
+}
+
+.card-accion {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* modo oscuro */
+
+.btn-tema{
+    right: 50px;
+    position: relative;
+}
+
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .navbar {
+    background-color: #1e1e1e !important;
+}
+
+body.dark-mode .card-accion {
+    background-color: #1e1e1e;
+    border-color: #EA580C;
+    color: #ffffff;
+}
+
+body.dark-mode .card-accion p {
+    color: #aaaaaa;
+}
+
+.btn-tema {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+body.dark-mode .wave-bottom path {
+    fill: #121212 !important;
+}
