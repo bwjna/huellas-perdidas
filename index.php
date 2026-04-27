@@ -1,5 +1,6 @@
 <?php
-include '../modelo/conexion.php';
+include 'modelo/conexion.php';
+include 'php/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,13 +9,13 @@ include '../modelo/conexion.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huellas Perdidas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="assets/css/global.css">
 </head>
 <body>
     <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
     <a class="navbar-brand" href="index.php">
-     <img src="../styles/logo_huellas_perdidas.png" class="logo">
+    <img src="assets/img/logo_huellas_perdidas.png" class="logo">
     </a>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
@@ -27,6 +28,11 @@ include '../modelo/conexion.php';
         <li class="nav-item">
           <a class="nav-link" href="#">¿Como ayudar?</a>
         </li>
+        <?php if(isAdmin()): ?>
+        <li class="nav-item">
+        <a class="nav-link" href="/huellas-perdidas/php/panel.php">Panel</a>
+        </li>
+        <?php endif; ?>
         <li class="nav-item">
           <a class="nav-link" href="#">Sobre Nosotros</a>
         </li>
@@ -35,13 +41,18 @@ include '../modelo/conexion.php';
         </li>
       </ul>
         <div class="ms-5">
-        <button class="btn btn-outline-light">Iniciar sesión</button>
-        <button class="btn btn-naranja">Registrarse</button>
+            <?php if(isLogged()): ?>
+                <a href="/huellas-perdidas/acciones/logout.php" class="btn btn-outline-light">
+                    Logout (<?= $_SESSION['logueado']['nombre'] ?>)
+                </a>
+            <?php else: ?>
+                <a href="acciones/login.php" class="btn btn-outline-light">Iniciar sesión</a>
+                <a href="php/registro.php" class="btn btn-naranja">Registrarse</a>
+            <?php endif; ?>
         </div>
     </div>
     <button id="toggle-tema" class="btn-tema">🌙</button>
   </div>
-</nav>
 </nav>
 <div class="fondo">
     <div class="container">
@@ -89,6 +100,6 @@ include '../modelo/conexion.php';
     </div>
 </section>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
-<script src="../javascript/script-claro-oscuro.js"></script>
+<script src="assets/js/script-claro-oscuro.js"></script>
 </body>
 </html>

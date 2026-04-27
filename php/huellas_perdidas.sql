@@ -6,10 +6,12 @@ CREATE TABLE usuario (
     rol ENUM('usuario','admin') DEFAULT 'usuario',
     nombre VARCHAR(50) NOT NULL,
     apellido VARCHAR(50) NOT NULL,
+    nombre_usuario VARCHAR(50) UNIQUE NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     clave VARCHAR(255) NOT NULL,
     foto_perfil VARCHAR(255),
-    telefono VARCHAR(20)
+    telefono VARCHAR(20),
+    fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
 ) ENGINE=InnoDB;
 
 CREATE TABLE mascota (
