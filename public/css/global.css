@@ -1,0 +1,252 @@
+/* ===== NAVBAR ===== */
+/* Mantener position:relative en .nav-link para el efecto ::after */
+.nav-link {
+    position: relative;
+    text-decoration: none;
+}
+
+/* Evitar forzar altura fija y overflow que recorta el contenido */
+.navbar {
+    /* altura flexible para no cortar el collapse ni los botones */
+    min-height: 64px;
+    /* eliminar overflow: hidden; */
+}
+
+/* subrayado animado */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 3px;
+    background-color: rgb(189, 126, 11);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Botones naranja (específicos, no tocar .btn global) */
+.btn-naranja {
+    background-color: #ff7a00;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+.btn-naranja:hover {
+    background-color: #e66d00;
+}
+
+/* ===== Hero ===== */
+.fondo {
+    width: 100%;
+    height: 500px;
+    background-image: url("../img/perrohd4k.jpeg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.fondo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.texto {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+    width: 60%;
+}
+
+/* ===== Cards ===== */
+.card-accion {
+    text-align: center;
+    padding: 40px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    transition: transform 0.2s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-accion:hover {
+    transform: translateY(-5px);
+}
+
+.card-icono {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.card-accion h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card-accion p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.btn-card {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 999px;
+    background: #EA580C !important;
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 0.9rem;
+}
+
+.btn-card:hover {
+    background: #c2410c;
+    color: white;
+}
+
+/* modo oscuro */
+/* quitar posicionamiento que movía el botón de tema */
+.btn-tema {
+    /* eliminar right y position relativos */
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* estilos dark-mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .navbar {
+    background-color: #1e1e1e !important;
+}
+
+body.dark-mode .card-accion {
+    background-color: #1e1e1e;
+    border-color: #EA580C;
+    color: #ffffff;
+}
+
+body.dark-mode .card-accion p {
+    color: #aaaaaa;
+}
+
+body.dark-mode .wave-bottom path {
+    fill: #121212 !important;
+}
+
+/* wave bottom */
+.wave-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.wave-bottom svg {
+    display: block;
+    width: 100%;
+    height: 150px;
+}
+
+/* Ajustes responsive para navbar */
+@media (max-width: 991px) {
+    .navbar {
+        min-height: auto;
+    }
+    .btn-naranja {
+        width: 100%;
+    }
+    .d-flex.gap-2.align-items-center {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 8px;
+    }
+}
+
+/* Forzar tamaño razonable del logo */
+.navbar-brand .logo,
+.navbar .logo {
+  height: 48px;        /* tamaño en desktop */
+  max-height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Asegurar navbar flexible y sin recortes */
+.navbar {
+  min-height: 64px;    /* no tan grande, permite el contenido */
+  height: auto;
+  overflow: visible;   /* importante: que no recorte el collapse */
+}
+
+/* Collapse y botones: que se muestren correctamente */
+.navbar-collapse {
+  z-index: 1000;       /* por si algo lo tapa */
+}
+
+/* Contenedor de botones: ocupar el espacio correcto */
+.navbar .acciones-nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* En pantallas pequeñas: botones dentro del collapse ocupen ancho completo */
+@media (max-width: 991px) {
+  .navbar-brand .logo { height: 44px; }
+  .navbar .acciones-nav {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  .navbar .acciones-nav .btn {
+    min-width: 140px;
+  }
+}
+
+/* Logo */
+.navbar .logo { height: 72px; max-height: 80px; width: auto; object-fit: contain; }
+
+/* Botón tema: estilo claro y pequeño */
+.btn-tema {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px 10px;
+  line-height: 1;
+}
+
+/* Asegurar que el collapse no quede oculto por otros elementos */
+.navbar-collapse { z-index: 1000; }
+
+/* Responsive: que el botón tema no empuje el layout en móvil */
+@media (max-width: 991px) {
+  .btn-tema { margin-left: 0.5rem; }
+  .navbar .logo { height: 56px; }
+}
+
+
+
