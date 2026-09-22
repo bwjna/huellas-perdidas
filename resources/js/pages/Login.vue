@@ -124,6 +124,12 @@ const handleFacebookLogin = () => {
       router.post('/auth/facebook/callback', {
         access_token: accessToken
       }, {
+        onSuccess: () => {
+          // El POST de Facebook navega por Inertia sin recargar el documento,
+          // así que el navbar (Blade) no se entera de la sesión nueva.
+          // Recargamos para que muestre el usuario logueado y su avatar.
+          window.location.reload()
+        },
         onError: (errors) => console.error('Errores del servidor:', errors)
       })
     } else {
