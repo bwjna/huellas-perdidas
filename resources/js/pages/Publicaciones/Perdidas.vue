@@ -286,7 +286,7 @@ const publicacionesFiltradas = computed(() => {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('/img/fondo-mascotas-perdidas.svg');
+    background-image: url('/img/fondo-mascotas-perdidas-2.svg');
     background-repeat: repeat;
     background-size: 360px 360px;
     opacity: 0.08;
