@@ -8,9 +8,9 @@ class Mascota extends Model
 {
     protected $fillable = [
         'nombre',
-        'edad',
         'color',
         'tamano',
+        'sexo',
         'especie',
         'raza',
         'usuario_id',

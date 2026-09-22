@@ -1,36 +1,68 @@
+/* ===== FONDO GENERAL (Huellas y Huesos) ===== */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #faf8f5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='150' height='150'%3E%3Cg fill='%23e4d9ca' opacity='0.6'%3E%3Cg transform='rotate(-15, 30, 30)'%3E%3Cpath d='M 23 33 Q 30 25 37 33 Q 40 43 30 43 Q 20 43 23 33 Z' /%3E%3Cellipse cx='18' cy='23' rx='3' ry='4' transform='rotate(-25, 18, 23)' /%3E%3Cellipse cx='26' cy='16' rx='3' ry='4' /%3E%3Cellipse cx='34' cy='16' rx='3' ry='4' /%3E%3Cellipse cx='42' cy='23' rx='3' ry='4' transform='rotate(25, 42, 23)' /%3E%3C/g%3E%3Cg transform='rotate(30, 75, 75)'%3E%3Crect x='63' y='71' width='24' height='8' /%3E%3Ccircle cx='63' cy='68' r='5' /%3E%3Ccircle cx='63' cy='82' r='5' /%3E%3Ccircle cx='87' cy='68' r='5' /%3E%3Ccircle cx='87' cy='82' r='5' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 180px 180px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
 /* ===== NAVBAR ===== */
-/* Mantener position:relative en .nav-link para el efecto ::after */
 .nav-link {
     position: relative;
     text-decoration: none;
 }
 
-/* Evitar forzar altura fija y overflow que recorta el contenido */
 .navbar {
-    /* altura flexible para no cortar el collapse ni los botones */
     min-height: 64px;
-    /* eliminar overflow: hidden; */
 }
 
-/* subrayado animado */
-.nav-link::after {
-    content: "";
+.navbar-collapse {
+    z-index: 1000;
+    visibility: visible !important;
+}
+
+/* navbar animada */
+.navbar-nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .nav-link {
+    z-index: 1;
+    padding: 6px 18px;
+    color: #ffffff !important;
+    transition: color 0.3s ease;
+}
+
+.nav-slider {
     position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0;
-    height: 3px;
-    background-color: rgb(189, 126, 11);
-    transition: width 0.3s;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 34px;
+    background: linear-gradient(45deg, #cc5500, #ff7a00);
+    border-radius: 8px;
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1), width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+    pointer-events: none;
 }
 
-.nav-link:hover::after {
-    width: 100%;
+/* Variables Bootstrap para color de links */
+nav.navbar {
+    --bs-navbar-color: #ffffff;
+    --bs-navbar-hover-color: #ffffff;
+    --bs-navbar-active-color: #ffffff;
 }
 
-/* Botones naranja (específicos, no tocar .btn global) */
+/* Botones naranja */
 .btn-naranja {
-    background-color: #ff7a00;
+    background-color: #ff7a00 !important;
     color: white;
     border: none;
     padding: 8px 14px;
@@ -120,9 +152,7 @@
 }
 
 /* modo oscuro */
-/* quitar posicionamiento que movía el botón de tema */
 .btn-tema {
-    /* eliminar right y position relativos */
     background: none;
     border: 1px solid #ccc;
     border-radius: 999px;
@@ -135,6 +165,8 @@
 body.dark-mode {
     background-color: #121212;
     color: #ffffff;
+    /* Patrón SVG modo oscuro (blanco pero casi transparente) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='150' height='150'%3E%3Cg fill='%23ffffff' opacity='0.03'%3E%3Cg transform='rotate(-15, 30, 30)'%3E%3Cpath d='M 23 33 Q 30 25 37 33 Q 40 43 30 43 Q 20 43 23 33 Z' /%3E%3Cellipse cx='18' cy='23' rx='3' ry='4' transform='rotate(-25, 18, 23)' /%3E%3Cellipse cx='26' cy='16' rx='3' ry='4' /%3E%3Cellipse cx='34' cy='16' rx='3' ry='4' /%3E%3Cellipse cx='42' cy='23' rx='3' ry='4' transform='rotate(25, 42, 23)' /%3E%3C/g%3E%3Cg transform='rotate(30, 75, 75)'%3E%3Crect x='63' y='71' width='24' height='8' /%3E%3Ccircle cx='63' cy='68' r='5' /%3E%3Ccircle cx='63' cy='82' r='5' /%3E%3Ccircle cx='87' cy='68' r='5' /%3E%3Ccircle cx='87' cy='82' r='5' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 body.dark-mode .navbar {
@@ -184,69 +216,71 @@ body.dark-mode .wave-bottom path {
     }
 }
 
-/* Forzar tamaño razonable del logo */
+/* Logo */
 .navbar-brand .logo,
 .navbar .logo {
-  height: 48px;        /* tamaño en desktop */
-  max-height: 56px;
-  width: auto;
-  object-fit: contain;
+    height: 48px;
+    max-height: 56px;
+    width: auto;
+    object-fit: contain;
 }
 
-/* Asegurar navbar flexible y sin recortes */
 .navbar {
-  min-height: 64px;    /* no tan grande, permite el contenido */
-  height: auto;
-  overflow: visible;   /* importante: que no recorte el collapse */
+    min-height: 64px;
+    height: auto;
+    overflow: visible;
 }
 
-/* Collapse y botones: que se muestren correctamente */
 .navbar-collapse {
-  z-index: 1000;       /* por si algo lo tapa */
+    z-index: 1000;
 }
 
-/* Contenedor de botones: ocupar el espacio correcto */
 .navbar .acciones-nav {
-  display: flex;
-  gap: 8px;
-  align-items: center;
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
 
-/* En pantallas pequeñas: botones dentro del collapse ocupen ancho completo */
 @media (max-width: 991px) {
-  .navbar-brand .logo { height: 44px; }
-  .navbar .acciones-nav {
-    width: 100%;
-    justify-content: flex-end;
-    margin-top: 8px;
-    flex-wrap: wrap;
-  }
-  .navbar .acciones-nav .btn {
-    min-width: 140px;
-  }
+    .navbar-brand .logo { height: 44px; }
+    .navbar .acciones-nav {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 8px;
+        flex-wrap: wrap;
+    }
+    .navbar .acciones-nav .btn {
+        min-width: 140px;
+    }
 }
 
-/* Logo */
-.navbar .logo { height: 72px; max-height: 80px; width: auto; object-fit: contain; }
+.navbar .logo { height: 100px; max-height: 200px; width: auto; object-fit: contain; }
 
-/* Botón tema: estilo claro y pequeño */
 .btn-tema {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.12);
-  color: #fff;
-  border-radius: 6px;
-  padding: 6px 10px;
-  line-height: 1;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #fff;
+    border-radius: 6px;
+    padding: 6px 10px;
+    line-height: 1;
 }
 
-/* Asegurar que el collapse no quede oculto por otros elementos */
 .navbar-collapse { z-index: 1000; }
 
-/* Responsive: que el botón tema no empuje el layout en móvil */
 @media (max-width: 991px) {
-  .btn-tema { margin-left: 0.5rem; }
-  .navbar .logo { height: 56px; }
+    .btn-tema { margin-left: 0.5rem; }
+    .navbar .logo { height: 56px; }
 }
 
+.dropdown-menu {
+    background-color: #222;
+    border: 1px solid rgba(255,255,255,0.1);
+}
 
+.dropdown-menu .dropdown-item-text {
+    color: #ffffff;
+}
 
+.dropdown-divider {
+    border-color: rgba(255,255,255,0.1);
+}

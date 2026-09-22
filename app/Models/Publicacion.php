@@ -14,9 +14,14 @@ class Publicacion extends Model
         'estado',
         'fecha_evento',
         'zona',
+        'lat',
+        'lng',
         'descripcion',
         'usuario_id',
         'mascota_id',
+        'fecha_encontrada',
+        'ubicacion_encontrada',
+        'contacto',
     ];
 
     public function usuario()
@@ -33,4 +38,15 @@ class Publicacion extends Model
     {
         return $this->hasMany(Avistamiento::class);
     }
+
+    public function vistasRegistradas()
+    {
+    return $this->hasMany(VistaPublicacion::class);
+    }
+
+    public function imagenes()
+    {
+        return $this->hasMany(Imagen::class)->orderBy('orden');
+    }
+
 }

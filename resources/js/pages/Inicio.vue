@@ -25,9 +25,9 @@
         <div class="col-md-4">
           <div class="card-accion">
             <div class="card-icono">🔍</div>
-            <h3>Perdí mi mascota</h3>
+            <h3>Perdí mi mascota</h3> 
             <p>Publicá para que la comunidad te ayude a encontrarla</p>
-            <a href="#" class="btn-card">Publicar</a>
+            <a href="/mascotas-perdidas" class="btn-card">Publicar</a>
           </div>
         </div>
 
@@ -36,7 +36,7 @@
             <div class="card-icono">🐾</div>
             <h3>Encontré una mascota</h3>
             <p>Avisá para reunirla con su dueño</p>
-            <a href="#" class="btn-card">Publicar</a>
+            <a href="/mascotas-encontradas" class="btn-card">Publicar</a>
           </div>
         </div>
 
@@ -45,7 +45,7 @@
             <div class="card-icono">🗺️</div>
             <h3>Quiero ayudar</h3>
             <p>Ver el mapa de mascotas perdidas en tu zona</p>
-            <a href="#" class="btn-card">Ver mapa</a>
+            <a href="/mapa" class="btn-card">Ver mapa</a>
           </div>
         </div>
 
