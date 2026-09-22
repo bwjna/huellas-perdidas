@@ -289,19 +289,19 @@ const publicacionesFiltradas = computed(() => {
     background-image: url('/img/fondo-mascotas-perdidas.svg');
     background-repeat: repeat;
     background-size: 360px 360px;
-    opacity: 0.06;
+    opacity: 0.08;
     pointer-events: none;
     z-index: 0;
 }
 
 /* Variante más marcada, por si la querés más visible en alguna sección puntual */
 .fondo-huesitos.fondo-huesitos-fuerte::after {
-    opacity: 0.2;
+    opacity: 0.3;
 }
 
 /* Variante en naranja, para que combine con la paleta de "perdidas" */
 .fondo-huesitos.fondo-huesitos-naranja::after {
-    opacity: 0.17;
+    opacity: 0.25;
 }
 
 </style>
