@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview fondo mascotas perdidas</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f1ea;
+    min-height: 100vh;
+  }
+  .pagina {
+    min-height: 100vh;
+    position: relative;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22360%22%20height%3D%22360%22%20viewBox%3D%220%200%20360%20360%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3C!--%20Icono%20real%20de%20huellita%20(Font%20Awesome%206%2C%20fa-paw%2C%20CC%20BY%204.0)%20--%3E%0A%20%20%20%20%3Cg%20id%3D%22paw%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M226.5%2092.9c14.3%2042.9-.3%2086.2-32.6%2096.8s-70.1-15.6-84.4-58.5s.3-86.2%2032.6-96.8s70.1%2015.6%2084.4%2058.5zM100.4%20198.6c18.9%2032.4%2014.3%2070.1-10.2%2084.1s-59.7-.9-78.5-33.3S-2.7%20179.3%2021.8%20165.3s59.7%20.9%2078.5%2033.3zM69.2%20401.2C121.6%20259.9%20214.7%20224%20256%20224s134.4%2035.9%20186.8%20177.2c3.6%209.7%205.2%2020.1%205.2%2030.5v1.6c0%2025.8-20.9%2046.7-46.7%2046.7c-11.5%200-22.9-1.4-34-4.2l-88-22c-15.3-3.8-31.3-3.8-46.6%200l-88%2022c-11.1%202.8-22.5%204.2-34%204.2C84.9%20480%2064%20459.1%2064%20433.3v-1.6c0-10.4%201.6-20.8%205.2-30.5zM421.8%20282.7c-24.5-14-29.1-51.7-10.2-84.1s54-47.3%2078.5-33.3s29.1%2051.7%2010.2%2084.1s-54%2047.3-78.5%2033.3zM310.1%20189.7c-32.3-10.6-46.9-53.9-32.6-96.8s52.1-69.1%2084.4-58.5s46.9%2053.9%2032.6%2096.8s-52.1%2069.1-84.4%2058.5z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%0A%20%20%20%20%3C!--%20Icono%20real%20de%20hueso%20(Font%20Awesome%206%2C%20fa-bone%2C%20CC%20BY%204.0)%20--%3E%0A%20%20%20%20%3Cg%20id%3D%22bone%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M153.7%20144.8c6.9%2016.3%2020.6%2031.2%2038.3%2031.2H384c17.7%200%2031.4-14.9%2038.3-31.2C434.4%20116.1%20462.9%2096%20496%2096c44.2%200%2080%2035.8%2080%2080c0%2030.4-17%2056.9-42%2070.4c-3.6%201.9-6%205.5-6%209.6s2.4%207.7%206%209.6c25%2013.5%2042%2040%2042%2070.4c0%2044.2-35.8%2080-80%2080c-33.1%200-61.6-20.1-73.7-48.8C415.4%20350.9%20401.7%20336%20384%20336H192c-17.7%200-31.4%2014.9-38.3%2031.2C141.6%20395.9%20113.1%20416%2080%20416c-44.2%200-80-35.8-80-80c0-30.4%2017-56.9%2042-70.4c3.6-1.9%206-5.5%206-9.6s-2.4-7.7-6-9.6C17%20232.9%200%20206.4%200%20176c0-44.2%2035.8-80%2080-80c33.1%200%2061.6%2020.1%2073.7%2048.8z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%0A%20%20%20%20%3C!--%20Icono%20real%20de%20pescado%20(Font%20Awesome%206%2C%20fa-fish%2C%20CC%20BY%204.0)%20--%3E%0A%20%20%20%20%3Cg%20id%3D%22fish%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M180.5%20141.5C219.7%20108.5%20272.6%2080%20336%2080s116.3%2028.5%20155.5%2061.5c39.1%2033%2066.9%2072.4%2081%2099.8c4.7%209.2%204.7%2020.1%200%2029.3c-14.1%2027.4-41.9%2066.8-81%2099.8C452.3%20403.5%20399.4%20432%20336%20432s-116.3-28.5-155.5-61.5c-16.2-13.7-30.5-28.5-42.7-43.1L48.1%20379.6c-12.5%207.3-28.4%205.3-38.7-4.9S-3%20348.7%204.2%20336.1L50%20256%204.2%20175.9c-7.2-12.6-5-28.4%205.3-38.6s26.1-12.2%2038.7-4.9l89.7%2052.3c12.2-14.6%2026.5-29.4%2042.7-43.1zM448%20256a32%2032%200%201%200%20-64%200%2032%2032%200%201%200%2064%200z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%0A%20%20%20%20%3C!--%20Ovillo%20de%20lana%20con%20hebras%20--%3E%0A%20%20%20%20%3Cg%20id%3D%22ovillo%22%20fill%3D%22none%22%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%220%22%20r%3D%2213%22%20stroke-width%3D%225%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M-8%204%20a%2011%2011%200%200%201%2012%20-8%22%20stroke-width%3D%224.5%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M2%2011%20a%2012%2012%200%200%201%20-9%20-3%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M13%20-4%20a%2010%2010%200%200%201%20-4%2010%22%20stroke-width%3D%223.8%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M14%208%20q%209%207%2016%201%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fdefs%3E%0A%0A%20%20%3Cg%20fill%3D%22%23ff7b00%22%20stroke%3D%22%23ff7b00%22%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23paw%22%20%20%20%20transform%3D%22translate(80%2080)%20%20%20rotate(15)%20%20scale(0.085)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23bone%22%20%20%20transform%3D%22translate(295%2055)%20%20rotate(-12)%20scale(0.1)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23fish%22%20%20%20transform%3D%22translate(300%20290)%20rotate(10)%20%20scale(0.1)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23ovillo%22%20transform%3D%22translate(50%20290)%20%20rotate(-6)%20%20scale(1.3)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23paw%22%20%20%20%20transform%3D%22translate(185%2045)%20%20rotate(-25)%20scale(0.07)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23fish%22%20%20%20transform%3D%22translate(110%20210)%20rotate(-20)%20scale(0.085)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23bone%22%20%20%20transform%3D%22translate(70%20150)%20%20rotate(8)%20%20%20scale(0.085)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23paw%22%20%20%20%20transform%3D%22translate(320%20160)%20rotate(-15)%20scale(0.07)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23bone%22%20%20%20transform%3D%22translate(205%20255)%20rotate(-25)%20scale(0.08)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23ovillo%22%20transform%3D%22translate(245%20120)%20rotate(10)%20%20scale(1.15)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23fish%22%20%20%20transform%3D%22translate(45%2035)%20%20%20rotate(-8)%20%20scale(0.075)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23paw%22%20%20%20%20transform%3D%22translate(230%2095)%20%20rotate(20)%20%20scale(0.07)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23bone%22%20%20%20transform%3D%22translate(175%20180)%20rotate(18)%20%20scale(0.075)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23paw%22%20%20%20%20transform%3D%22translate(125%20285)%20rotate(-10)%20scale(0.075)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23ovillo%22%20transform%3D%22translate(150%20100)%20rotate(-14)%20scale(1.1)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23fish%22%20%20%20transform%3D%22translate(245%20185)%20rotate(-5)%20%20scale(0.08)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23bone%22%20%20%20transform%3D%22translate(110%2040)%20%20rotate(22)%20%20scale(0.075)%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+    background-repeat: repeat;
+    background-size: 360px 360px;
+    opacity: 0.25;
+    padding: 40px 30px 80px;
+  }
+
+  /* Preview: opacidad del fondo "perdidas" (0.25), motivos densos */
+  .muestra-b {
+    position: relative;
+    min-height: 100vh;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22360%22%20height%3D%22360%22%20viewBox%3D%220%200%20360%20360%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3C!--%20Icono%20real%20de%20huellita%20(Font%20Awesome%206%2C%20fa-paw%2C%20CC%20BY%204.0)%20--%3E%0A%20%20%20%20%3Cg%20id%3D%22paw%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M226.5%2092.9c14.3%2042.9-.3%2086.2-32.6%2096.8s-70.1-15.6-84.4-58.5s.3-86.2%2032.6-96.8s70.1%2015.6%2084.4%2058.5zM100.4%20198.6c18.9%2032.4%2014.3%2070.1-10.2%2084.1s-59.7-.9-78.5-33.3S-2.7%20179.3%2021.8%20165.3s59.7%20.9%2078.5%2033.3zM69.2%20401.2C121.6%20259.9%20214.7%20224%20256%20224s134.4%2035.9%20186.8%20177.2c3.6%209.7%205.2%2020.1%205.2%2030.5v1.6c0%2025.8-20.9%2046.7-46.7%2046.7c-11.5%200-22.9-1.4-34-4.2l-88-22c-15.3-3.8-31.3-3.8-46.6%200l-88%2022c-11.1%202.8-22.5%204.2-34%204.2C84.9%20480%2064%20459.1%2064%20433.3v-1.6c0-10.4%201.6-20.8%205.2-30.5zM421.8%20282.7c-24.5-14-29.1-51.7-10.2-84.1s54-47.3%2078.5-33.3s29.1%2051.7%2010.2%2084.1s-54%2047.3-78.5%2033.3zM310.1%20189.7c-32.3-10.6-46.9-53.9-32.6-96.8s52.1-69.1%2084.4-58.5s46.9%2053.9%2032.6%2096.8s-52.1%2069.1-84.4%2058.5z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%0A%20%20%20%20%3C!--%20Icono%20real%20de%20hueso%20(Font%20Awesome%206%2C%20fa-bone%2C%20CC%20BY%204.0)%20--%3E%0A%20%20%20%20%3Cg%20id%3D%22bone%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M153.7%20144.8c6.9%2016.3%2020.6%2031.2%2038.3%2031.2H384c17.7%200%2031.4-14.9%2038.3-31.2C434.4%20116.1%20462.9%2096%20496%2096c44.2%200%2080%2035.8%2080%2080c0%2030.4-17%2056.9-42%2070.4c-3.6%201.9-6%205.5-6%209.6s2.4%207.7%206%209.6c25%2013.5%2042%2040%2042%2070.4c0%2044.2-35.8%2080-80%2080c-33.1%200-61.6-20.1-73.7-48.8C415.4%20350.9%20401.7%20336%20384%20336H192c-17.7%200-31.4%2014.9-38.3%2031.2C141.6%20395.9%20113.1%20416%2080%20416c-44.2%200-80-35.8-80-80c0-30.4%2017-56.9%2042-70.4c3.6-1.9%206-5.5%206-9.6s-2.4-7.7-6-9.6C17%20232.9%200%20206.4%200%20176c0-44.2%2035.8-80%2080-80c33.1%200%2061.6%2020.1%2073.7%2048.8z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%0A%20%20%20%20%3C!--%20Icono%20real%20de%20pescado%20(Font%20Awesome%206%2C%20fa-fish%2C%20CC%20BY%204.0)%20--%3E%0A%20%20%20%20%3Cg%20id%3D%22fish%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M180.5%20141.5C219.7%20108.5%20272.6%2080%20336%2080s116.3%2028.5%20155.5%2061.5c39.1%2033%2066.9%2072.4%2081%2099.8c4.7%209.2%204.7%2020.1%200%2029.3c-14.1%2027.4-41.9%2066.8-81%2099.8C452.3%20403.5%20399.4%20432%20336%20432s-116.3-28.5-155.5-61.5c-16.2-13.7-30.5-28.5-42.7-43.1L48.1%20379.6c-12.5%207.3-28.4%205.3-38.7-4.9S-3%20348.7%204.2%20336.1L50%20256%204.2%20175.9c-7.2-12.6-5-28.4%205.3-38.6s26.1-12.2%2038.7-4.9l89.7%2052.3c12.2-14.6%2026.5-29.4%2042.7-43.1zM448%20256a32%2032%200%201%200%20-64%200%2032%2032%200%201%200%2064%200z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%0A%20%20%20%20%3C!--%20Ovillo%20de%20lana%20con%20hebras%20--%3E%0A%20%20%20%20%3Cg%20id%3D%22ovillo%22%20fill%3D%22none%22%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%220%22%20r%3D%2213%22%20stroke-width%3D%225%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M-8%204%20a%2011%2011%200%200%201%2012%20-8%22%20stroke-width%3D%224.5%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M2%2011%20a%2012%2012%200%200%201%20-9%20-3%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M13%20-4%20a%2010%2010%200%200%201%20-4%2010%22%20stroke-width%3D%223.8%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M14%208%20q%209%207%2016%201%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fdefs%3E%0A%0A%20%20%3Cg%20fill%3D%22%23ff7b00%22%20stroke%3D%22%23ff7b00%22%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23paw%22%20%20%20%20transform%3D%22translate(80%2080)%20%20%20rotate(15)%20%20scale(0.085)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23bone%22%20%20%20transform%3D%22translate(295%2055)%20%20rotate(-12)%20scale(0.1)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23fish%22%20%20%20transform%3D%22translate(300%20290)%20rotate(10)%20%20scale(0.1)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23ovillo%22%20transform%3D%22translate(50%20290)%20%20rotate(-6)%20%20scale(1.3)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23paw%22%20%20%20%20transform%3D%22translate(185%2045)%20%20rotate(-25)%20scale(0.07)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23fish%22%20%20%20transform%3D%22translate(110%20210)%20rotate(-20)%20scale(0.085)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23bone%22%20%20%20transform%3D%22translate(70%20150)%20%20rotate(8)%20%20%20scale(0.085)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23paw%22%20%20%20%20transform%3D%22translate(320%20160)%20rotate(-15)%20scale(0.07)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23bone%22%20%20%20transform%3D%22translate(205%20255)%20rotate(-25)%20scale(0.08)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23ovillo%22%20transform%3D%22translate(245%20120)%20rotate(10)%20%20scale(1.15)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23fish%22%20%20%20transform%3D%22translate(45%2035)%20%20%20rotate(-8)%20%20scale(0.075)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23paw%22%20%20%20%20transform%3D%22translate(230%2095)%20%20rotate(20)%20%20scale(0.07)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23bone%22%20%20%20transform%3D%22translate(175%20180)%20rotate(18)%20%20scale(0.075)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23paw%22%20%20%20%20transform%3D%22translate(125%20285)%20rotate(-10)%20scale(0.075)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23ovillo%22%20transform%3D%22translate(150%20100)%20rotate(-14)%20scale(1.1)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23fish%22%20%20%20transform%3D%22translate(245%20185)%20rotate(-5)%20%20scale(0.08)%22%2F%3E%0A%20%20%20%20%3Cuse%20href%3D%22%23bone%22%20%20%20transform%3D%22translate(110%2040)%20%20rotate(22)%20%20scale(0.075)%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+    background-repeat: repeat;
+    background-size: 360px 360px;
+    opacity: 0.25;
+    padding: 40px 30px 80px;
+  }
+
+  h2 {
+    font-size: 26px; color: #111; margin-bottom: 18px;
+  }
+  .nota {
+    font-size: 13px; color: #888; margin-bottom: 26px; max-width: 700px; line-height: 1.5;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
+    gap: 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .card {
+    background: #fff;
+    border: 3px solid #111;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 6px 6px 0 rgba(17,17,17,.12);
+  }
+  .card img {
+    width: 100%; height: 210px; object-fit: cover; display: block;
+  }
+  .card .cuerpo { padding: 14px 16px; }
+  .card .titulo { font-weight: 700; font-size: 17px; margin-bottom: 6px; }
+  .card .dato { font-size: 13px; color: #555; }
+  .chip { display:inline-block; background:#ffe8d0; border:2px solid #111; border-radius:999px; padding:3px 10px; font-size:12px; font-weight:600; margin:2px 4px 2px 0; }
+
+  .divisor { height: 40px; }
+  .hero {
+    text-align:center; padding: 60px 20px 30px;
+  }
+  .hero h1 { font-size: 46px; }
+  .hero .naranja { color: #ff7b00; }
+</style>
+</head>
+<body>
+
+  <!-- Muestra: fondo de la pÃ¡gina de perdidas (opacidad naranja 0.1) -->
+  <div class="pagina">
+    <div class="hero">
+      <h1>Mascotas <span class="naranja">perdidas</span></h1>
+      <p class="nota" style="margin:16px auto 0;">AsÃ­ se ve el fondo nuevo en la pÃ¡gina de perdidas: huellitas, huesitos, ovillo de lana y pescado en naranja suave al 10% de opacidad sobre el fondo crema.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <img src="public/img/perrohd4k.jpeg" alt="Perrito">
+        <div class="cuerpo">
+          <div class="titulo">Se perdiÃ³ Tom</div>
+          <div><span class="chip">Perro</span><span class="chip">Macho</span><span class="chip">Mediano</span></div>
+          <p class="dato" style="margin-top:8px;">zona saladillo Â· hace 2 horas</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="public/img/perro-log.jpeg" alt="Gato">
+        <div class="cuerpo">
+          <div class="titulo">Se perdiÃ³ Luna</div>
+          <div><span class="chip">Gato</span><span class="chip">Negro</span><span class="chip">PequeÃ±o</span></div>
+          <p class="dato" style="margin-top:8px;">barrio centro Â· hace 1 dÃ­a</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="cuerpo" style="min-height:210px; display:flex; align-items:center; justify-content:center; font-size:64px;">ðŸ¾</div>
+        <div class="cuerpo">
+          <div class="titulo">Busca a Milo</div>
+          <div><span class="chip">Perro</span><span class="chip">Chow Chow</span></div>
+          <p class="dato" style="margin-top:8px;">plaza central Â· hace 3 dÃ­as</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
+

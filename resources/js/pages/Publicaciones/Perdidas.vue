@@ -1,10 +1,10 @@
-<template>
+﻿<template>
     <div class="fondo-huesitos fondo-huesitos-naranja">
 
         <!-- HERO -->
         <div class="hero">
             <h1>Mascotas <span class="highlight">perdidas</span></h1>
-            <p>Estas mascotas están esperando volver a casa. Si reconocés a alguna, contactate con su familia.</p>
+            <p>Estas mascotas estÃ¡n esperando volver a casa. Si reconocÃ©s a alguna, contactate con su familia.</p>
 
             <div class="hero-actions">
                 <Link href="/publicaciones/crear?tipo=perdido" class="btn-publicar">
@@ -25,11 +25,11 @@
                 {{ publicacionesFiltradas.length }} resultado{{ publicacionesFiltradas.length !== 1 ? 's' : '' }}
             </span>
             <div class="active-tags">
-                <button v-if="filtros.tipo" class="active-tag" @click="filtros.tipo = ''; filtros.raza = ''">{{ filtros.tipo }} ✕</button>
-                <button v-if="filtros.sexo" class="active-tag" @click="filtros.sexo = ''">{{ filtros.sexo }} ✕</button>
-                <button v-if="filtros.tamano" class="active-tag" @click="filtros.tamano = ''">{{ filtros.tamano }} ✕</button>
-                <button v-if="filtros.color" class="active-tag" @click="filtros.color = ''">{{ filtros.color }} ✕</button>
-                <button v-if="filtros.raza" class="active-tag" @click="filtros.raza = ''">{{ filtros.raza }} ✕</button>
+                <button v-if="filtros.tipo" class="active-tag" @click="filtros.tipo = ''; filtros.raza = ''">{{ filtros.tipo }} âœ•</button>
+                <button v-if="filtros.sexo" class="active-tag" @click="filtros.sexo = ''">{{ filtros.sexo }} âœ•</button>
+                <button v-if="filtros.tamano" class="active-tag" @click="filtros.tamano = ''">{{ filtros.tamano }} âœ•</button>
+                <button v-if="filtros.color" class="active-tag" @click="filtros.color = ''">{{ filtros.color }} âœ•</button>
+                <button v-if="filtros.raza" class="active-tag" @click="filtros.raza = ''">{{ filtros.raza }} âœ•</button>
             </div>
         </div>
 
@@ -40,9 +40,9 @@
 
         <!-- EMPTY STATE -->
         <div class="empty-state" v-else>
-            <div class="empty-icon">🐾</div>
+            <div class="empty-icon">ðŸ¾</div>
             <h3>No hay resultados</h3>
-            <p>Probá con otra búsqueda o filtros diferentes.</p>
+            <p>ProbÃ¡ con otra bÃºsqueda o filtros diferentes.</p>
             <button class="btn-limpiar btn-limpiar-empty" @click="limpiarFiltros">Limpiar filtros</button>
         </div>
 
@@ -80,8 +80,8 @@ const limpiarFiltros = () => {
     panelRef.value?.limpiarTemp()
 }
 
-// Normaliza para comparar sin fricción: minúsculas, sin espacios extra y sin tildes.
-// Así un valor guardado como " Negro", "NEGRO" o "Negro " encuentra el filtro "Negro".
+// Normaliza para comparar sin fricciÃ³n: minÃºsculas, sin espacios extra y sin tildes.
+// AsÃ­ un valor guardado como " Negro", "NEGRO" o "Negro " encuentra el filtro "Negro".
 const normalizar = (valor) =>
     String(valor ?? '')
         .toLowerCase()
@@ -97,7 +97,7 @@ const publicacionesFiltradas = computed(() => {
 
         const coincideSexo =
             filtros.value.sexo === '' ||
-            // NULL o '' en la BD significan "desconocido" (la opción "No sé").
+            // NULL o '' en la BD significan "desconocido" (la opciÃ³n "No sÃ©").
             normalizar(p.mascota?.sexo || 'desconocido') === normalizar(filtros.value.sexo)
 
         const coincideTamano =
@@ -286,22 +286,22 @@ const publicacionesFiltradas = computed(() => {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('/img/fondo-mascotas-perdidas-2.svg');
+    background-image: url('/img/fondo-mascotas-perdidas-3.svg');
     background-repeat: repeat;
     background-size: 360px 360px;
-    opacity: 0.08;
+    opacity: 0.14;
     pointer-events: none;
     z-index: 0;
 }
 
-/* Variante más marcada, por si la querés más visible en alguna sección puntual */
+/* Variante mÃ¡s marcada, por si la querÃ©s mÃ¡s visible en alguna secciÃ³n puntual */
 .fondo-huesitos.fondo-huesitos-fuerte::after {
-    opacity: 0.3;
+    opacity: 0.42;
 }
 
 /* Variante en naranja, para que combine con la paleta de "perdidas" */
 .fondo-huesitos.fondo-huesitos-naranja::after {
-    opacity: 0.25;
+    opacity: 0.38;
 }
 
 </style>
