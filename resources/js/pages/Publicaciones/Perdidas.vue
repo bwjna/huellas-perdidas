@@ -97,7 +97,8 @@ const publicacionesFiltradas = computed(() => {
 
         const coincideSexo =
             filtros.value.sexo === '' ||
-            normalizar(p.mascota?.sexo) === normalizar(filtros.value.sexo)
+            // NULL o '' en la BD significan "desconocido" (la opción "No sé").
+            normalizar(p.mascota?.sexo || 'desconocido') === normalizar(filtros.value.sexo)
 
         const coincideTamano =
             filtros.value.tamano === '' ||
