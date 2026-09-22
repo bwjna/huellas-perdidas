@@ -278,6 +278,8 @@ const publicacionesFiltradas = computed(() => {
 
 .fondo-huesitos {
     position: relative;
+    background: #f4f1ea;
+    min-height: 100vh;
 }
 
 .fondo-huesitos::after {
@@ -294,12 +296,12 @@ const publicacionesFiltradas = computed(() => {
 
 /* Variante más marcada, por si la querés más visible en alguna sección puntual */
 .fondo-huesitos.fondo-huesitos-fuerte::after {
-    opacity: 0.12;
+    opacity: 0.15;
 }
 
 /* Variante en naranja, para que combine con la paleta de "perdidas" */
 .fondo-huesitos.fondo-huesitos-naranja::after {
-    opacity: 0.1;
+    opacity: 0.12;
 }
 
 </style>
