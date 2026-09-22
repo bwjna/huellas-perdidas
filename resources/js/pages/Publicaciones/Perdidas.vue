@@ -284,23 +284,22 @@ const publicacionesFiltradas = computed(() => {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Cg fill='%23000000'%3E%3Cg transform='translate(20,30) rotate(-20)'%3E%3Ccircle cx='0' cy='0' r='6'/%3E%3Ccircle cx='0' cy='11' r='6'/%3E%3Ccircle cx='40' cy='0' r='6'/%3E%3Ccircle cx='40' cy='11' r='6'/%3E%3Crect x='0' y='1' width='40' height='9'/%3E%3C/g%3E%3Cg transform='translate(95,105) rotate(15)'%3E%3Cpath d='M0 12 C8 2,28 2,36 12 C28 22,8 22,0 12 Z M36 12 L52 3 L48 12 L52 21 Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-image: url('/img/fondo-mascotas-perdidas.svg');
     background-repeat: repeat;
-    background-size: 160px 160px;
-    opacity: 0.05;
+    background-size: 360px 360px;
+    opacity: 0.06;
     pointer-events: none;
     z-index: 0;
 }
 
 /* Variante más marcada, por si la querés más visible en alguna sección puntual */
 .fondo-huesitos.fondo-huesitos-fuerte::after {
-    opacity: 0.1;
+    opacity: 0.12;
 }
 
 /* Variante en naranja, para que combine con la paleta de "perdidas" */
 .fondo-huesitos.fondo-huesitos-naranja::after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Cg fill='%23ff7b00'%3E%3Cg transform='translate(20,30) rotate(-20)'%3E%3Ccircle cx='0' cy='0' r='6'/%3E%3Ccircle cx='0' cy='11' r='6'/%3E%3Ccircle cx='40' cy='0' r='6'/%3E%3Ccircle cx='40' cy='11' r='6'/%3E%3Crect x='0' y='1' width='40' height='9'/%3E%3C/g%3E%3Cg transform='translate(95,105) rotate(15)'%3E%3Cpath d='M0 12 C8 2,28 2,36 12 C28 22,8 22,0 12 Z M36 12 L52 3 L48 12 L52 21 Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.08;
+    opacity: 0.1;
 }
 
 </style>
